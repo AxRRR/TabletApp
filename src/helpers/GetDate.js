@@ -11,10 +11,10 @@ function formatMonth() {
     let getRealDate = new Date();
     let month = getRealDate.getMonth() + 1;
 
-    const Months = ['Desbug', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
             'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
     for (let m = 0; m < 12; m++) {
-        if(m === month) return Months[m];
+        if(m === month) return months[m-1];
     }
 }
