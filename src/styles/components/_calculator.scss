@@ -11,7 +11,7 @@
     text-align: left;
     width: 100%;
     height: auto;
-    background-color: #242424;
+    background-color: $screenclear;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -29,6 +29,7 @@
     margin-right: 40px;
     width: 25px;
     height: 25px;
+    cursor: pointer;
   }
   
   .calc_item-history {

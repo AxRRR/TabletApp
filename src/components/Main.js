@@ -18,10 +18,11 @@ export const Main = props => {
                 <ShowDate 
                     getTime={RealDate.getComptTime} 
                     getDate={RealDate.getComptDate} 
-                    />
+                />
                 <Apps 
                     openCalculator={props.openCalculator}
-                    />
+                    openNotes={props.openNotes}
+                />
                 <div className='tablet__downbar'>
                     <span>back</span>
                 </div>

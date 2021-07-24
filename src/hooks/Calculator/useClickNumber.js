@@ -1,29 +1,21 @@
 import { useEffect, useState } from "react";
+/* eslint no-eval: 0 */
 
-export const useClickNumber = (num, operator) => {
+export const useCalculator = (num, operator) => {
     const [result, setResult] = useState('')
     const [history, setHistory] = useState('')
-    const isResultShow = false;
 
     useEffect(() => {
-        if (result === "" && history === "") {
-            console.log(result + num)
-            setResult(result + num);
-        } else {
-            console.log(result + num)
-            setResult(result + num);
-        }
-    
-    
-    // useEffect(() => {
         if (operator === "clear") {
             setResult('');
             setHistory('');
             return;
         }
         else if(operator === "backspace"){
-            let res = result.slice(0, -1);
-            return setResult(res);
+            if (result !== "" && history === "") {
+                let res = result.slice(0, -1);
+                return setResult(res);
+            }
         }
         else if(operator === "%"){
             let res = eval(result/100)
@@ -41,13 +33,17 @@ export const useClickNumber = (num, operator) => {
             } else if (operator) {
             return setResult(result + operator);
             } else if (result !== "" && history !== "") {
-            if (isResultShow === true) {
-                setResult(result);
-            } else {
-                setResult(result + operator + result);
-            }
         }
-    }, [operator, isResultShow, num])
+        
+    }, [operator])
+
+    useEffect(() => {
+        if (result === "" && history === "") {
+            setResult(result + num);
+        } else {
+            setResult(result + num);
+        }
+    }, [num]);
 
     return {result, history}
 }

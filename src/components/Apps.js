@@ -14,6 +14,7 @@ export const Apps = props => {
                     src='https://i.pinimg.com/236x/89/4f/80/894f80c466bb749ae1cec0132663a932.jpg'
                     alt='noteapp'
                     className='tablet__screen-app'
+                    onClick={props.openNotes}
                 />
                 <img 
                     src='https://i.pinimg.com/564x/4a/b1/bb/4ab1bbdb45b0ebe8890b0497f71a9d87.jpg'
