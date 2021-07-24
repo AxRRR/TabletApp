@@ -7,8 +7,6 @@ import { ContainerWallpaperScreen } from './TabletContainer';
 
 export const Main = props => {
     const [RealDate, setRealDate] = useState('')
-    const [OpenApp, SetOpenApp] = useState(true);
-    let openAppClass;
 
     useEffect(() => {
         setRealDate(getRealDate());
