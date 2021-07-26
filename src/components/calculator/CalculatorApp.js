@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useCalculator } from '../../hooks/Calculator/useClickNumber';
+import { Downbar } from '../Downbar';
 import { ContainerWallpaperScreen } from '../TabletContainer';
 
 export const CalculatorApp = (props) => {
@@ -42,6 +43,7 @@ export const CalculatorApp = (props) => {
                         <p onClick={() => setOperatorSelect('=')} name="operator" id="=" className="calc_items-style" style={{color: 'white', backgroundColor: '#ff7113'}}>=</p>
                     </div>
                 </div>
+                <Downbar onShowMain={props.onShowMain} onCloseCalculator={props.onCloseCalculator} />
             </ContainerWallpaperScreen>
         </Fragment>
     );

@@ -22,10 +22,9 @@ export const Main = props => {
                 <Apps 
                     openCalculator={props.openCalculator}
                     openNotes={props.openNotes}
+                    openCountdown={props.openCountdown}
                 />
-                <div className='tablet__downbar'>
-                    <span>back</span>
-                </div>
+                {/* <Downbar /> */}
             </ContainerWallpaperScreen>
         </div>
     );

@@ -27,10 +27,17 @@ export const Apps = props => {
                     className='tablet__screen-app'
                 />
                 <img 
+                    src='https://thumbs.dreamstime.com/b/timer-vector-icon-watch-clock-142446503.jpg'
+                    alt='countdownapp'
+                    className='tablet__screen-app'
+                    onClick={props.openCountdown}
+                />
+                <img 
                     src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN4G4PYqxm3aizuNQMlcKd2KOWB_f4J_qDRg&usqp=CAU'
                     alt='bankapp'
                     className='tablet__screen-app'
                 />
+                
             </div>
         </Fragment>
     );

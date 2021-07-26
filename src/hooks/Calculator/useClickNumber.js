@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export const useCalculator = (num, operator) => {
     const [result, setResult] = useState('')
     const [history, setHistory] = useState('')
-
+    
     useEffect(() => {
         if (operator === "clear") {
             setResult('');

@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { getRealDate } from '../../helpers/GetDate';
 import { useForm } from '../../hooks/Util/useForm';
+import { Downbar } from '../Downbar';
 import { ContainerWallpaperScreen } from '../TabletContainer';
 import { RenderNotes } from './RenderNotes';
 
 export const NotesApp = (props) => {
     const [hideNotes, setHideNotes] = useState(true)
     const [notes, setNotes] = useState([])
-    const [RealDate, setRealDate] = useState('')
 
     useEffect(() => { props.onCloseMain(); }, [props])
 
@@ -18,14 +18,11 @@ export const NotesApp = (props) => {
         createat: getRealDate()
     })
 
-    console.log(notes)
-
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setNotes([...notes, form])
+        e.preventDefault();
+        setNotes([...notes, form]);
         setHideNotes(true);
     }
-
 
     return (
         <Fragment>
@@ -54,13 +51,20 @@ export const NotesApp = (props) => {
                             onChange={handlerInputChange} 
                             className='tablet__add-inputBody'
                         />
-                        <button className='tablet__add-btnCancel'>Cancel</button>
-                        <button className='tablet__add-btnAccept'>Accept</button>
+                        <button 
+                            className='tablet__add-btnCancel'
+                            onClick={() => setHideNotes(true)}
+                        >Cancel</button>
+                        <button 
+                            className='tablet__add-btnAccept'
+                            type='submit'
+                        >Accept</button>
                     </form>
                 </div>}
                 <div className='tablet__notes-container-add'>
                     <p className='tablet__notes-add' onClick={() => setHideNotes(false)}>+</p>
                 </div>
+                <Downbar onShowMain={props.onShowMain} onCloseNotesApp={props.onCloseNotesApp} />
             </ContainerWallpaperScreen>
         </Fragment>
     );
