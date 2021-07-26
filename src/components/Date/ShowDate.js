@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-// import PropTypes from 'prop-types';
 
 export const ShowDate = ({ getTime = '', getDate = '' }) => {
     return (
@@ -10,7 +9,3 @@ export const ShowDate = ({ getTime = '', getDate = '' }) => {
     );
 };
 
-// ShowDate.propTypes = {
-//     getTime: PropTypes.string.isRequired,
-//     getDate: PropTypes.string.isRequired
-// };
